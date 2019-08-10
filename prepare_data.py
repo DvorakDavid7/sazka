@@ -1,9 +1,9 @@
 
 class Prepare_data:
-    def prepare(self,path):
+    def prepare(self,path, save_file):
         data = set(open(path, "r"))
         data = list(data)
         data.sort()
-        with open("sorted_data.txt", "w") as file:
+        with open(save_file, "w") as file:
             for item in data:
                 file.write(item)

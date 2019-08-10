@@ -3,9 +3,8 @@ import time
 
 
 class Searching_Jirka:
-    def searching_jirka(self,arrExcel, arrDatabase):
-
-        soucet = 0
+    def finder_jirka(self,arrExcel, arrDatabase):
+        matches = []
         k = 0
         for i in range(len(arrExcel)):
             for j in range(k, len(arrDatabase)):
@@ -14,9 +13,10 @@ class Searching_Jirka:
                     break
 
                 elif arrExcel[i] == arrDatabase[j]:
-                    soucet = soucet + 1
+                    matches.append(arrExcel[i])
                     break
-        return soucet
+        return matches
+
 
 
 if __name__ == "__main__":
