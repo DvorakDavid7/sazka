@@ -22,16 +22,18 @@ class Control_panel:
         self.label_current_database = Label(self.text_field, textvariable = self.text_path, font = "Helvetica 9")
         self.text_path.set("database: \n" + self.database_path)
 
-        b2 = Button(self.buttons, text="number of matches",font="Helvetica 12", command = lambda:(self.ungrid(), self.number_of_matches()))
-        b1 = Button(self.buttons, text="Create database",font="Helvetica 12", command = lambda:(self.ungrid(), self.create_database()))
-        b3 = Button(self.buttons, text="Run Finder",font="Helvetica 12", command = lambda:(self.ungrid(), self.finding_jirka()))
+        b2 = Button(self.buttons,width = 26,height = 5,padx = 4, text="number of matches",font="Helvetica 12", command = lambda:(self.ungrid(), self.number_of_matches()))
+        b1 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Create database",font="Helvetica 12", command = lambda:(self.ungrid(), self.create_database()))
+        b3 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Run Finder",font="Helvetica 12", command = lambda:(self.ungrid(), self.finding_jirka()))
+        b4 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Detector",font="Helvetica 12", command = lambda:(self.ungrid(), self.detector()))
 
-        b1.grid(row = 0, column = 0, sticky = "W")
-        b2.grid(row = 0, column = 1, sticky = "W")
-        b3.grid(row = 0, column = 2, sticky = "W")
+        b1.grid(row = 0, column = 0)
+        b2.grid(row = 0, column = 1)
+        b3.grid(row = 1, column = 0)
+        b4.grid(row = 1, column = 1)
 
-        self.text_field.grid(row = 0, column = 0, columnspan = 10)
-        self.buttons.grid(row = 1, column = 0)
+        self.text_field.grid(row=0,column=0)
+        self.buttons.grid(row=1,column=0)
 
         self.label_current_database.grid(row = 0, column = 0)
 

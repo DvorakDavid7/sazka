@@ -1,5 +1,5 @@
 
-class Prepare_data:
+class Prepare_database:
     def prepare(self,path, save_file):
         data = set(open(path, "r"))
         data = list(data)
