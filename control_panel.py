@@ -26,11 +26,14 @@ class Control_panel:
         b1 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Create database",font="Helvetica 12", command = lambda:(self.ungrid(), self.create_database()))
         b3 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Run Finder",font="Helvetica 12", command = lambda:(self.ungrid(), self.finding_jirka()))
         b4 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Detector",font="Helvetica 12", command = lambda:(self.ungrid(), self.detector()))
+        b5 = Button(self.buttons,width = 26,height = 5,padx = 4, text="Insert into database",font="Helvetica 12", command = lambda:(self.ungrid(), self.insert_into_database()))
+
 
         b1.grid(row = 0, column = 0)
         b2.grid(row = 0, column = 1)
         b3.grid(row = 1, column = 0)
         b4.grid(row = 1, column = 1)
+        b5.grid(row = 2, column = 0)
 
         self.text_field.grid(row=0,column=0)
         self.buttons.grid(row=1,column=0)
