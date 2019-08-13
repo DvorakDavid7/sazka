@@ -134,10 +134,8 @@ class Finder(Searching, Prepare_database, Control_panel, Searching_Jirka, Prepar
                     message += "Batch-YZ "
             else:
                 message = "NOBATCH "
-
             self.sheet.cell(row=i + 2, column=28).value = message
-
-
+            
         self.book.save(self.excel_path)
         self.text_stat.set("Done")
         self.text_time.set("time: " + str(time.time() - start) + " sec")
@@ -158,6 +156,16 @@ class Finder(Searching, Prepare_database, Control_panel, Searching_Jirka, Prepar
         self.prepare(self.database_path, self.database_path)
 
         self.text_stat.set("Done")
+
+
+    def mistakes_detector(self):
+        print("dasdsa")
+        self.load_excel()
+        print("dasdsa")
+        for i in range(len(self.sheet["AB"]) - 1):
+            detected = str(self.sheet.cell(row=i + 2, column=28).value)
+            original = str(self.sheet.cell(row=i + 2, column=23).value)
+
 
 
 def main():
